@@ -1,7 +1,13 @@
 package com.example.listalazy
 
 import android.R.attr.textimport
-import androidx.compose.material3.IconButton android.R.attr.textimport android.R.attr.textimport android.R.attr.textimport
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.ui.unit.sp
+
+android.R.attr.textimport android.R.attr.textimport android.R.attr.textimport
 import android.os.Bundle android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -29,7 +35,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ListaLazyTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    GamesScreen(modifier = Modifier)
+                    GamesScreen()
                 }
             }
         }
@@ -44,7 +50,7 @@ fun GamesScreen(modifier: Modifier = Modifier){
     ) {
         Text(
             text = "Meus jogos favoritos",
-            fontSize = 24.dp,
+            fontSize = 24.sp,
             fontWeight = FontWeight.Bold
         )
         OutlinedTextField(
@@ -53,7 +59,14 @@ fun GamesScreen(modifier: Modifier = Modifier){
             modifier = Modifier.fillMaxWidth(),
             label = {Text("Nome do studio")},
             trailingIcon = {
-                IconButton() { }
+                IconButton(
+                    onClick = {}
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = "busca"
+                    )
+                }
             }
         )
     }
